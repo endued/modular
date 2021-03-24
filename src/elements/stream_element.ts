@@ -1,7 +1,7 @@
 import { StreamActions } from "../core/streams/stream_actions"
 import { nextAnimationFrame } from "../util"
 
-// <turbo-stream action=replace target=id><template>...
+// <modular-stream action=replace target=id><template>...
 
 export class StreamElement extends HTMLElement {
   async connectedCallback() {
@@ -71,10 +71,10 @@ export class StreamElement extends HTMLElement {
   }
 
   private get description() {
-    return (this.outerHTML.match(/<[^>]+>/) ?? [])[0] ?? "<turbo-stream>"
+    return (this.outerHTML.match(/<[^>]+>/) ?? [])[0] ?? "<modular-stream>"
   }
 
   private get beforeRenderEvent() {
-    return new CustomEvent("turbo:before-stream-render", { bubbles: true, cancelable: true })
+    return new CustomEvent("modular:before-stream-render", { bubbles: true, cancelable: true })
   }
 }
