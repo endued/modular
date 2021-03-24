@@ -100,7 +100,7 @@ export class FrameElement extends HTMLElement {
   }
 
   get isPreview() {
-    return this.ownerDocument?.documentElement?.hasAttribute("data-turbo-preview")
+    return this.ownerDocument?.documentElement?.hasAttribute("data-modular-preview")
   }
 }
 
